@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="css/lightbox.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mio.css">
+</head>
+<body>
+<form name="f1">
+<label>Region:</label> 
+<select name=pais onchange="cambia_provincia()"> 
+<option value="0" disabled selected>Seleccione su region</option>
+                  <option value="1">Arica y Parinacota</option>
+                  <option value="2">Tarapacá</option>
+                  <option value="3">Antofagasta</option>
+                  <option value="4">Atacama</option>
+                  <option value="5">Coquimbo</option>
+                  <option value="6">Valparaíso</option>
+                  <option value="7">Región del Libertador Gral. Bernardo O’Higgins</option>
+                  <option value="8">Región del Maule</option>
+                  <option value="9">Región del Biobío</option>
+                  <option value="10">Región de la Araucanía</option>
+                  <option value="11">Región de Los Río</option>
+                  <option value="12">Región de Los Lagos</option>
+                  <option value="13">Región Aisén del Gral. Carlos Ibáñez del Campo</option>
+                  <option value="14">Región de Magallanes y de la AntárVca Chilena</option>
+                  <option value="15">Región Metropolitana de Santiago</option>
+</select><br>
+<label>Ciudad</label>
+<select name=provincia> 
+<option value="-">- 
+</select> <br>
+<label>tipo Vivienda</label>
+<select name=casa>
+                  <option value="" disabled selected>Seleccione tipo Vivienda</option>
+                  <option value="1">Casa con patio grande</option>
+                  <option value="2">Casa con patio pequeño</option>
+                  <option value="3">Casa sin patio</option>
+                  <option value="4">Departamento</option>
+                </select><br>
+
+</form>
+<button onclick="valsel()">registrar</button>
+
+<script type="text/javascript">
+	//variables correspondientes
+var opt_1 = new Array ("-","Arica", "Camarones", "Putre", "General Lagos")
+var opt_2 = new Array ("-","Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica")
+var opt_3 = new Array ("-","Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena")
+var opt_4 = new Array ("-","Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco")
+var opt_5 = new Array ("-","La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado")
+var opt_6 = new Array ("-","Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana")
+var opt_7 = new Array ("-","Rancagua", "Codegua", "Coinco", "Coltauco", "Doñihue", "Graneros", "Las Cabras", "Machalí", "Malloa", "Mostazal", "Olivar", "Peumo", "Pichidegua", "Quinta de Tilcoco", "Rengo", "Requínoa", "San Vicente", "Pichilemu", "La Estrella", "Litueche", "Marchihue", "Navidad", "Paredones", "San Fernando", "Chépica", "Chimbarongo", "Lolol", "Nancagua", "Palmilla", "Peralillo", "Placilla", "Pumanque", "Santa Cruz")
+var opt_8 = new Array ("-","Talca", "ConsVtución", "Curepto", "Empedrado", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Rafael", "Cauquenes", "Chanco", "Pelluhue", "Curicó", "Hualañé", "Licantén", "Molina", "Rauco", "Romeral", "Sagrada Familia", "Teno", "Vichuquén", "Linares", "Colbún", "Longaví", "Parral", "ReVro", "San Javier", "Villa Alegre", "Yerbas Buenas")
+var opt_9 = new Array ("-","Concepción", "Coronel", "Chiguayante", "Florida", "Hualqui", "Lota", "Penco", "San Pedro de la Paz", "Santa Juana", "Talcahuano", "Tomé", "Hualpén", "Lebu", "Arauco", "Cañete", "Contulmo", "Curanilahue", "Los Álamos", "Tirúa", "Los Ángeles", "Antuco", "Cabrero", "Laja", "Mulchén", "Nacimiento", "Negrete", "Quilaco", "Quilleco", "San Rosendo", "Santa Bárbara", "Tucapel", "Yumbel", "Alto Biobío", "Chillán", "Bulnes", "Cobquecura", "Coelemu", "Coihueco", "Chillán Viejo", "El Carmen", "Ninhue", "Ñiquén", "Pemuco", "Pinto", "Portezuelo", "Quillón", "Quirihue", "Ránquil", "San Carlos", "San Fabián", "San Ignacio", "San Nicolás", "Treguaco", "Yungay")
+var opt_10 = new Array ("-","Temuco", "Carahue", "Cunco", "Curarrehue", "Freire", "Galvarino", "Gorbea", "Lautaro", "Loncoche", "Melipeuco", "Nueva Imperial", "Padre las Casas", "Perquenco", "Pitrufquén", "Pucón", "Saavedra", "Teodoro Schmidt", "Toltén", "Vilcún", "Villarrica", "Cholchol", "Angol", "Collipulli", "Curacautín", "Ercilla", "Lonquimay", "Los Sauces", "Lumaco", "Purén", "Renaico", "Traiguén", "Victoria")
+var opt_11 = new Array ("-","Valdivia", "Corral", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli", "La Unión", "Futrono", "Lago Ranco", "Río Bueno")
+var opt_12 = new Array ("-","Puerto Montt", "Calbuco", "Cochamó", "Fresia", "FruVllar", "Los Muermos", "Llanquihue", "Maullín", "Puerto Varas", "Castro", "Ancud", "Chonchi", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quellón", "Quemchi", "Quinchao", "Osorno", "Puerto Octay", "Purranque", "Puyehue", "Río Negro", "San Juan de la Costa", "San Pablo", "Chaitén", "Futaleufú", "Hualaihué", "Palena")
+var opt_13 = new Array ("-","Coihaique", "Lago Verde", "Aisén", "Cisnes", "Guaitecas", "Cochrane", "O’Higgins", "Tortel", "Chile Chico", "Río Ibáñez")
+var opt_14 = new Array ("-","Punta Arenas", "Laguna Blanca", "Río Verde", "San Gregorio", "Cabo de Hornos (Ex Navarino)", "AntárVca", "Porvenir", "Primavera", "Timaukel", "Natales", "Torres del Paine")
+var opt_15 = new Array ("-","Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "TilVl", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor")
+//funcion para cambiar
+
+function cambia_provincia(){ 
+   	//tomo el valor del select del pais elegido 
+   	var pais 
+   	pais = document.f1.pais[document.f1.pais.selectedIndex].value 
+   	//miro a ver si el pais está definido 
+   	if (pais != 0) { 
+      	//si estaba definido, entonces coloco las opciones de la provincia correspondiente. 
+      	//selecciono el array de provincia adecuado 
+      	mis_provincias=eval("opt_" + pais) 
+      	//calculo el numero de provincias 
+      	num_provincias = mis_provincias.length 
+      	//marco el número de provincias en el select 
+      	document.f1.provincia.length = num_provincias 
+      	//para cada provincia del array, la introduzco en el select 
+      	for(i=0;i<num_provincias;i++){ 
+         	document.f1.provincia.options[i].value=mis_provincias[i] 
+         	document.f1.provincia.options[i].text=mis_provincias[i] 
+      	}	
+   	}else{ 
+      	//si no había provincia seleccionada, elimino las provincias del select 
+      	document.f1.provincia.length = 1 
+      	//coloco un guión en la única opción que he dejado 
+      	document.f1.provincia.options[0].value = "-" 
+      	document.f1.provincia.options[0].text = "-" 
+   	} 
+   	//marco como seleccionada la opción primera de provincia 
+   	document.f1.provincia.options[0].selected = true 
+}
+</script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/select.js"></script>
+	<script type="text/javascript" src="js/validate.js"></script>
+
+</body>
+</html>

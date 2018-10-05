@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/lightbox.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mio.css">
+</head>
+<body>
+	<header>
+		    <nav class="nav-center">
+		    <div class="nav-wrapper">
+		      <a href="#!" class="brand-logo"><img src="imagenes/logo.png"></a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <div class="nav-wrapper container">
+			      <ul class="right hide-on-med-and-down" style="">
+			        <li><a href="index.html">inicio</a></li>
+			        <li><a href="badges.html">quienes somos</a></li>
+			        <li><a href="collapsible.html">servicios</a></li>
+			        <li><a href="mobile.html">contactanos</a></li>
+			      </ul>
+		      </div>
+		    </div>
+		</nav>
+
+		  <ul class="sidenav" id="mobile-demo">
+		    	<li><a href="index.html">inicio</a></li>
+			    <li><a href="badges.html">quienes somos</a></li>
+			    <li><a href="collapsible.html">servicios</a></li>
+			    <li><a href="mobile.html">contactanos</a></li>
+		  </ul>
+	</header>
+	<div class="container">
+		<form name="formulario">
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Ingrese su email" id="id_email" type="email" onblur="valmail()" required>
+	          		<label for="email">Email</label>
+          		</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Ingrese su rut" id="id_rut" type="text" onblur="valrut()" required>
+	          		<label for="rut">rut</label>
+          		</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Ingrese su nombre completo" id="id_nombre" type="text" onblur="valnombre()"  required>
+	          		<label for="nombre">nombre completo</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input type="date" id="id_fecha" onblur="valdate()" placeholder="Ingrese su fecha de nacimiento" required>
+					<label for="fechaNac">Fecha Nacimiento</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input type="number" id="telefono" onblur="valtel()" placeholder="ingrese su telefono">
+					<label for="telefono">Telefono</label>
+				</div>
+			</div>
+			<a class="waves-effect waves-ligth btn" onclick="valtodo()"><I class="campaña">Siguiente</I></a>
+		</form>
+	</div>
+		<footer class="fweb">
+  			Desarrollo Web y Mobile
+  		</footer>
+
+</body>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/select.js"></script>
+	<script type="text/javascript" src="js/validate.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/lightbox.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+	
+</html>
